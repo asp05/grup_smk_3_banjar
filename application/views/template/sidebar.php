@@ -17,7 +17,9 @@
             </div>
             <div class="profile_info">
               <span>Selamat Datang,</span>
-              <h2>Admin</h2>
+              <?php foreach ($admin as $x) :?>
+              <h2><?=$x->username_admin?></h2>
+              <?php endforeach;?>
             </div>
           </div>
           <!-- /menu profile quick info -->

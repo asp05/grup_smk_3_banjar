@@ -10,9 +10,10 @@ class Home extends CI_Controller
     }
 	public function index()
 	{
-		$data['judul']	= "Admin";
-		$this->load->view('template/header',$data);
-		$this->load->view('template/sidebar');
+		$judul['judul']	= "Admin";
+		$data['admin'] = $this->m_crud->tampilkan('tbl_admin');
+		$this->load->view('template/header',$judul);
+		$this->load->view('template/sidebar',$data);
 		$this->load->view('template/navigasi');
 		$this->load->view('template/index');
 		$this->load->view('template/footer');

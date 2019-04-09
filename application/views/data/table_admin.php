@@ -34,8 +34,6 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -45,6 +43,7 @@
                         <tr>
                           <th><center>Username</center></th>
                           <th><center>Email Address</center></th>
+                          <th><center>Aksi</center></th>
                          
                         </tr>
                       </thead>
