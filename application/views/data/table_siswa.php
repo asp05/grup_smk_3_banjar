@@ -45,11 +45,43 @@
                           <th><center>Nama</center></th>
                           <th><center>Jenis Kelamin</center></th>
                           <th><center>Kelas</center></th>
-                          <th><center>Foto Siswa</center></th> 
+                          <th><center>Foto Siswa</center></th>
+                          <th><center>Aksi</center></th>
                         </tr>
                       </thead>
                       <tbody>
-
+                             <?php 
+                    if($isibio){
+                      foreach($isibio as $row) {
+                        ?>
+                      
+                    <tr>
+                        <td style="vertical-align: middle;"><?php echo $row->nis;?></td>
+                        <td style="vertical-align: middle;"><?php echo $row->nama;?></td>
+                        <td style="vertical-align: middle;"><?php echo $row->jk;?></td>
+                        <td style="vertical-align: middle;"><?php echo $row->kelas;?></td>
+                        <td style="vertical-align: middle;"><?php echo $row->photo_siswa;?></td>
+                        <td>
+                            <div class="table-data-feature" style="vertical-align: middle;">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                    <i class="zmdi zmdi-mail-send"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                    <i class="zmdi zmdi-more"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php
+                  }
+                }
+                    ?>
                       </tbody>
                     </table>
                   </div>
