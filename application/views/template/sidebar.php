@@ -5,7 +5,7 @@
         <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="<?php echo site_url('home'); ?>" class="site_title"><i class="fa fa-home"></i> <span>SMKN 3 Banjar</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -16,8 +16,8 @@
                 <img src="<?php echo base_url(); ?>assets/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <span>Selamat Datang,</span>
+                <h2>Admin</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -34,9 +34,10 @@
                       <li><a href="<?php echo base_url(); ?>home/index">Dashboard</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Master <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-table"></i> Biodata <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url(); ?>master/barang/index">Master Barang</a></li>
+                      <li><a href="<?php echo base_url(); ?>master/barang/index">Biodata Siswa</a></li>
+                      <li><a href="<?php echo base_url(); ?>master/barang/index">Biodata Guru</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-gear"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
