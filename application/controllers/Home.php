@@ -19,26 +19,13 @@ class Home extends CI_Controller
 	}
 	public function tabel_siswa($id = null)
 	{
-		if ($id != null) {
-	        $q          = $this->m_crud->mengambil('v_biosiswa', array('nis'=>$id));
-    	}else{
-	        $q          = $this->m_crud->mengambil('v_biosiswa');
-    	}
-        if ($q['num_rows'] == true) {
-            $status = 200;
-        } else {
-            $status = 404;
-        }
-        $data['isibio'] = $q;
-         $this->li->to_json(array(
-            'status' => $status,
-            'data'   => $q['data']->result(),
-        ));
+		
 		$judul['judul']	= "Welcome to Ashop";
+		$data['pengguna'] = $this->m_crud->tampilkan();
 		$this->load->view('template/header',$judul);
 		$this->load->view('template/sidebar');
 		$this->load->view('template/navigasi');
-		$this->load->view('data/table_siswa', $data);
+		$this->load->view('data/table_siswa',$data);
 		$this->load->view('template/footer');
 	}
 	
