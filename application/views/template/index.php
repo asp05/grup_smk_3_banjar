@@ -109,7 +109,7 @@
                             <div class="media-body">
                               <a class="title" href="#">Ms. Mary Jane</a>
                               <p><strong>$2300. </strong> Agent Avarage Sales </p>
-                              <p> <small>12 Sales Today</small>
+                              <p> <small>12 Sales hri</small>
                               </p>
                             </div>
                           </li>
