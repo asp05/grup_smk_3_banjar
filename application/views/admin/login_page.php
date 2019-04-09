@@ -77,53 +77,40 @@
   <link rel="shortcut icon" href="<?php echo base_url('assets/favicon.png')?>" />
 </head>
 
-<body>
+<body style="background: linear-gradient(aqua,black);">
   <div class="right_col" role="main">
-          <div class="">
+
   <div class="row">
-              <div class="col-md-4 tengah">
-                <div class="x_panel">
+              <div class="col-md-4 tengah" >
+                <div class="x_panel" style="background: linear-gradient(to right,black,aqua);">
                   <div class="x_title">
-                    <h2>Form login</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h1><font face="times new roman" color="white">Form login<font></h1>
+                    
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
+                    <br />
                     <form class="form-horizontal input_mask" action="<?php echo site_url('login/proses');?>" method="post" >
                       <div class="row">
-                        <div class="col-md-10 col-md-offset-2 form-group has-feedback">
+                        <div class="col-md-12 col-md-offset-2 form-group has-feedback">
                           <input type="text" class="form-control has-feedback-left" name="username_admin" id="inputSuccess2" placeholder="Username">
                           <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-md-10 form-group has-feedback">
+                        <div class="col-md-12 form-group has-feedback">
                           <input type="password" class="form-control has-feedback-left" name="password" id="inputSuccess4" placeholder="Password">
                           <span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
                         </div>
                       </div>
-                      
+                      <br />
 
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="">
-                          <button type="submit" class="btn btn-success btn-block">Submit</button>
+                          <button type="submit" class="btn btn-success btn-block" style="background-color: blue;">Login</button>
                         </div>
                       </div>
                       <?php
@@ -138,6 +125,7 @@
 
                     </form>
                   </div>
+                  <p class="footer-text text-center text-white">Copyright © Your Website 2019</p>
                 </div>
                 </div>
               </div>
