@@ -20,5 +20,14 @@ class Home extends CI_Controller
 		$this->load->view('template/index');
 		$this->load->view('template/footer');
 	}
+	public function tabel_siswa()
+	{
+		$data['judul']	= "Welcome to Ashop";
+		$this->load->view('template/header',$data);
+		$this->load->view('template/sidebar');
+		$this->load->view('template/navigasi');
+		$this->load->view('data/table_siswa');
+		$this->load->view('template/footer');
+	}
 	
 }
