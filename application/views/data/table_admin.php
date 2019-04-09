@@ -1,3 +1,5 @@
+   <!-- ini menampilkan table admin  -->
+
    <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
@@ -19,35 +21,38 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Tabel<strong>Siswa</strong></h2>
+                    <h2>Akun<strong> Admin</strong></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li><a href="<?php echo base_url('home/tabel_siswa/tambah') ?>"><i class="fa fa-plus"></i></a>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content"> 
-                    <table id="datatable" class="table table-striped table-hover">
+                    <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th><center>Nis</center></th>
-                          <th><center>Foto Siswa</center></th>
-                          <th><center>Nama</center></th>
-                          <th><center>Jenis Kelamin</center></th>
-                          <th><center>Kelas</center></th>
-                          <th><center>Aksi</center></th>
+                          <th><center>Username</center></th>
+                          <th><center>Email Address</center></th>
+                         
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($pengguna as $x) :?>
+                        <?php foreach ($admin as $x) :?>
                     <tr>
-                        <td style="vertical-align: middle;"><?=$x->nis?></td>
-                        <td class="align-center"><img style="width: 100px;" src="<?php echo base_url().'assets/images/siswa/'.$x->photo_siswa;?>"></td>
-                        <td style="vertical-align: middle;"><?=$x->nama?></td>
-                        <td style="vertical-align: middle;"><?=$x->jk?></td>
-                        <td style="vertical-align: middle;"><?=$x->kelas?></td>
+                        <td style="vertical-align: middle;"><?=$x->username_admin?></td>
+                        <td style="vertical-align: middle;"><?=$x->email?></td>
                          <td style="align-items: center;">
                            <div class="btn-group">
                     <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Pilih <span class="caret"></span>
@@ -56,9 +61,6 @@
                       <li><a href="#">Hapus</a>
                       </li>
                       <li><a href="#">Edit</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="#">Detail</a>
                       </li>
                     </ul>
                     </div>

@@ -10,23 +10,23 @@ class Home extends CI_Controller
     }
 	public function index()
 	{
-		$data['judul']	= "Welcome to Ashop";
+		$data['judul']	= "Admin";
 		$this->load->view('template/header',$data);
 		$this->load->view('template/sidebar');
 		$this->load->view('template/navigasi');
 		$this->load->view('template/index');
 		$this->load->view('template/footer');
 	}
-	public function tabel_siswa($id = null)
-	{
-		
-		$judul['judul']	= "Welcome to Ashop";
-		$data['pengguna'] = $this->m_crud->tampilkan();
+	// Untuk Admin ya Bro
+	public function tabel_admin ($id = null){
+		$judul['judul'] = "Admin";
+		$data['admin'] = $this->m_crud->tampilkan('tbl_admin');
 		$this->load->view('template/header',$judul);
 		$this->load->view('template/sidebar');
 		$this->load->view('template/navigasi');
-		$this->load->view('data/table_siswa',$data);
+		$this->load->view('data/table_admin',$data);
 		$this->load->view('template/footer');
+
 	}
 	
 }
