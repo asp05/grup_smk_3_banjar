@@ -71,4 +71,7 @@
     <!-- DataTable -->
     <script src="<?php echo base_url(); ?>assets/datatables/dataTables.min.js"></script>
     <!-- switch alert -->
+
+    <!-- gambar smkn 3 banjar -->
+    <link rel="shortcut icon" href="<?php echo base_url('assets/image/logoig1.png')?>" />
   </head>
