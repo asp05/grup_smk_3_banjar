@@ -23,7 +23,7 @@ class Home extends CI_Controller
 		$judul['judul'] = "Admin";
 		$data['admin'] = $this->m_crud->tampilkan('tbl_admin');
 		$this->load->view('template/header',$judul);
-		$this->load->view('template/sidebar');
+		$this->load->view('template/sidebar',$data);
 		$this->load->view('template/navigasi');
 		$this->load->view('data/table_admin',$data);
 		$this->load->view('template/footer');

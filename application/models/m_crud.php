@@ -5,6 +5,10 @@ class M_crud extends CI_Model
 	function tampilkan($table)
 	{
 		return  $this->db->get($table)->result();
+        if($query->num_rows()>0)
+        {
+            return $query->num_rows();
+        }
 	}
 
 	// untuk admin

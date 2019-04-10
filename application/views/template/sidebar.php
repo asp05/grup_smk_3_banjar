@@ -17,9 +17,7 @@
             </div>
             <div class="profile_info">
               <span>Selamat Datang,</span>
-              <?php foreach ($admin as $x) :?>
-              <h2><?=$x->username_admin?></h2>
-              <?php endforeach;?>
+              <h2><?php echo $this->session->username_admin; ?></h2>
             </div>
           </div>
           <!-- /menu profile quick info -->
