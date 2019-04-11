@@ -48,24 +48,24 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($admin as $x) :?>
-                    <tr>
-                        <td style="vertical-align: middle;"><?=$x->username_admin?></td>
-                        <td style="vertical-align: middle;"><?=$x->email?></td>
-                         <td style="align-items: center;">
-                           <div class="btn-group">
-                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Pilih <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu">
-                      <li><a href="#">Hapus</a>
-                      </li>
-                      <li><a href="#">Edit</a>
-                      </li>
-                    </ul>
-                    </div>
-                        </td>
+                        <?php foreach ($isi as $x) :?>
+                          <tr>
+                              <td style="vertical-align: middle;"><?=$x->username_admin?></td>
+                              <td style="vertical-align: middle;"><?=$x->email?></td>
+                              <td style="align-items: center;">
+                                 <div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Pilih <span class="caret"></span>
+                                    </button>
+                                    <ul role="menu" class="dropdown-menu">
+                                      <li><a href="#">Hapus</a>
+                                      </li>
+                                      <li><a href="#">Edit</a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                              </td>
+                          </tr>
                         <?php endforeach;?>
-                    </tr>
                       </tbody>
                     </table>
                   </div>

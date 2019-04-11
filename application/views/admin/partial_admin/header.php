@@ -24,12 +24,12 @@
 <link href="<?php echo base_url(); ?>assets/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
 <!-- Custom Theme Style -->
-<link href="<?php echo base_url(); ?>assets/build/css/custom.min.css" rel="stylesheet">
+<link href="<?php echo base_url('assets/build/css/custom.min.css'); ?>" rel="stylesheet">
 <!-- DataTable -->
 <link href="<?php echo base_url();?>assets/datatables/dataTables.min.css" rel="stylesheet">
 
 <!-- jQuery -->
-<script src="<?php echo base_url(); ?>assets/vendors/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo base_url('assets/vendors/jquery/dist/jquery.min.js'); ?>"></script>
 <!-- Bootstrap -->
 <script src="<?php echo base_url(); ?>assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
@@ -70,4 +70,4 @@
 <!-- switch alert -->
 
 <!-- gambar smkn 3 banjar -->
-<link rel="shortcut icon" href="<?php echo base_url('assets/image/logoig1.png')?>" />
+<link rel="shortcut icon" href="<?php echo base_url('assets/images/logoig1.png')?>" />

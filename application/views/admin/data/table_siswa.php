@@ -41,14 +41,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($pengguna as $x) :?>
+                        <?php foreach ($query as $x) :?>
                     <tr>
                         <td style="vertical-align: middle;"><?=$x->nis?></td>
                         <td class="align-center"><img style="width: 100px;" src="<?php echo base_url().'assets/images/siswa/'.$x->photo_siswa;?>"></td>
                         <td style="vertical-align: middle;"><?=$x->nama?></td>
                         <td style="vertical-align: middle;"><?=$x->jk?></td>
                         <td style="vertical-align: middle;"><?=$x->kelas?></td>
-                         <td style="align-items: center;">
+                        <td style="align-items: center;">
                            <div class="btn-group">
                     <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Pilih <span class="caret"></span>
                     </button>

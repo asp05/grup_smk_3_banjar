@@ -1,7 +1,6 @@
 
 
-        <!-- top navigation -->
-        <div class="top_nav ">
+
           <div class="nav_menu">
             <nav>
               <div class="nav toggle">
@@ -94,5 +93,4 @@
               </ul>
             </nav>
           </div>
-        </div>
-        <!-- /top navigation -->
+
