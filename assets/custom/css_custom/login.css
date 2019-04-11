@@ -1,9 +1,15 @@
 .tengah{
 	margin-top: 100px;
-	margin-left: 450px; 
+	margin-left: 485px; 
 	position: fixed;
-	height: 500px;
+	width: 400px;
+	box-shadow: 7px 5px;
 }
-.isitengah{
-	margin-left: 10px;
+.bg-image{
+	/*background-color: red;*/
+	background-image: url('assets/images/4.jpg');
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
 }
