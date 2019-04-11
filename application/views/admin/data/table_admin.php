@@ -48,10 +48,13 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($isi as $x) :?>
+                        <?php
+                          if($isi){
+                            foreach ($isi as $x) {
+                        ?>
                           <tr>
-                              <td style="vertical-align: middle;"><?=$x->username_admin?></td>
-                              <td style="vertical-align: middle;"><?=$x->email?></td>
+                              <td style="vertical-align: middle;"><?php echo $x->username_admin ?></td>
+                              <td style="vertical-align: middle;"><?php echo $x->email ?></td>
                               <td style="align-items: center;">
                                  <div class="btn-group">
                                     <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Pilih <span class="caret"></span>
@@ -65,7 +68,10 @@
                                   </div>
                               </td>
                           </tr>
-                        <?php endforeach;?>
+                        <?php 
+                            }
+                          }
+                        ?>
                       </tbody>
                     </table>
                   </div>
