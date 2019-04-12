@@ -77,12 +77,12 @@
   <link rel="shortcut icon" href="<?php echo base_url('assets/favicon.png')?>" />
 </head>
 
-<body style="background: linear-gradient(aqua,black);">
+<body style="background: radial-gradient(purple,black);">
   <div class="right_col" role="main">
 
   <div class="row">
               <div class="col-md-4 tengah" >
-                <div class="x_panel" style="background: linear-gradient(to right,black,aqua);">
+                <div class="x_panel" style="background: linear-gradient(to right,black,black,purple,black,black);">
                   <div class="x_title">
                     <h1><font face="times new roman" color="white">Form login<font></h1>
                     
