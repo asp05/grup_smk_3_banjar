@@ -22,6 +22,53 @@ class Siswa extends CI_Controller
 		$this->load->view('data/table_siswa',$data);
 		$this->load->view('template/footer');
 	}
+
+
+	  public function tabel_siswa($id=null)
+    {
+    	$data['judul'] = "SMKN 3 Banjar - siswa";
+		$data['isi'] = $this->mc->mengambil('v_biosiswa');
+    	$data['page'] = 'admin/data/table_siswa';
+
+    	$this->load->view('admin/homepage', $data);
+    }
+
+
+
+
+    public function ajax_list()
+    {
+        $list = $this->mc->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $siswa) {
+            $no++;
+            $row = array();
+            $row[] = $siswa->nis;
+            $row[] = $siswa->nama;
+            $row[] = $siswa->jk;
+            $row[] = $siswa->kelas;
+            $row[] = $siswa->photo_siswa;
+ 
+            //add html for action
+            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_siswa('."'".$siswa->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_siswa('."'".$siswa->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+ 
+            $data[] = $row;
+        }
+ 
+        $output = array(
+                        "draw" => $_POST['draw'],
+                        "recordsTotal" => $this->mc->count_all(),
+                        "recordsFiltered" => $this->mc->count_filtered(),
+                        "data" => $data,
+                );
+        //output to json format
+        echo json_encode($output);
+    }
+
+
+
 	public function tambah()
 	{
 		{
@@ -48,4 +95,4 @@ class Siswa extends CI_Controller
                     $this->load->view('template/footer');
 		}
 	}
-}
+}}

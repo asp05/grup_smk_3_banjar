@@ -19,7 +19,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Tabel<strong>Siswa</strong></h2>
+                    <h2>Tabel <strong> Siswa</strong></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -33,41 +33,70 @@
                       <thead>
                         <tr>
                           <th><center>Nis</center></th>
-                          <th><center>Foto Siswa</center></th>
                           <th><center>Nama</center></th>
                           <th><center>Jenis Kelamin</center></th>
                           <th><center>Kelas</center></th>
+                          <th><center>Foto Siswa</center></th>
                           <th><center>Aksi</center></th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($query as $x) :?>
-                    <tr>
-                        <td style="vertical-align: middle;"><?=$x->nis?></td>
-                        <td class="align-center"><img style="width: 100px;" src="<?php echo base_url().'assets/images/siswa/'.$x->photo_siswa;?>"></td>
-                        <td style="vertical-align: middle;"><?=$x->nama?></td>
-                        <td style="vertical-align: middle;"><?=$x->jk?></td>
-                        <td style="vertical-align: middle;"><?=$x->kelas?></td>
-                        <td style="align-items: center;">
-                           <div class="btn-group">
-                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Pilih <span class="caret"></span>
-                    </button>
-                    <ul role="menu" class="dropdown-menu">
-                      <li><a href="#">Hapus</a>
-                      </li>
-                      <li><a href="#">Edit</a>
-                      </li>
-                      <li class="divider"></li>
-                      <li><a href="#">Detail</a>
-                      </li>
-                    </ul>
-                    </div>
-                        </td>
-                        <?php endforeach;?>
+
                     </tr>
                       </tbody>
                     </table>
                   </div>
+
+                  <script src="<?php echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script>
+                  <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
+                  <script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
+                  <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.js')?>"></script>
+                  <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
+
+                  <script type="text/javascript">
+ 
+                    var save_method; //for save method string
+                    var table;
+                     
+                    $(document).ready(function() {
+                     
+                        //datatables
+                        table = $('#table').DataTable({ 
+                     
+                            "processing": true, //Feature control the processing indicator.
+                            "serverSide": true, //Feature control DataTables' server-side processing mode.
+                            "order": [], //Initial no order.
+                     
+                            // Load data for the table's content from an Ajax source
+                            "ajax": {
+                                "url": "<?php echo site_url('biodata/Siswa/ajax_list')?>",
+                                "type": "POST"
+                            },
+                     
+                            //Set column definition initialisation properties.
+                            "columnDefs": [
+                            { 
+                                "targets": [ -1 ], //last column
+                                "orderable": false, //set not orderable
+                            },
+                            ],
+                     
+                        });
+                     
+                        //datepicker
+                        $('.datepicker').datepicker({
+                            autoclose: true,
+                            format: "yyyy-mm-dd",
+                            todayHighlight: true,
+                            orientation: "top auto",
+                            todayBtn: true,
+                            todayHighlight: true,  
+                        });
+                     
+                    });
+
+                  </script>
+
                 </div>
               </div>
             </div>
