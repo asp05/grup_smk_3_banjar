@@ -25,12 +25,12 @@ class Login extends CI_Controller {
 
         redirect('home/index');
       } else {
-        $data['errormsg'] = ", coba lagi! ";
-        $this->load->view('admin/login_page', $data);
+        $this->session->set_flashdata('errormsg', 'Login Gagal');
+        $this->load->view('admin/login_page');
       }
     } else {
-      $data['errormsg'] = ", coba lagi! ";
-      $this->load->view('admin/login_page', $data);
+      $this->session->set_flashdata('errormsg', 'Login Gagal');
+      $this->load->view('admin/login_page');
     }
   }
 
