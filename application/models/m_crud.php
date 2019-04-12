@@ -63,14 +63,14 @@ class M_crud extends CI_Model {
 	}
 
 	//admin katanya
-	// function tampilkan($table)
-	// {
-	// 	return  $this->db->get($table)->result();
- //        if($query->num_rows()>0)
- //        {
- //            return $query->num_rows();
- //        }
-	// }
+	 function tampilkan($table)
+	{
+	 	return  $this->db->get($table)->result();
+        if($query->num_rows()>0)
+    {
+             return $query->num_rows();
+         }
+	 }
 }
 
 /* End of file m_crud.php */

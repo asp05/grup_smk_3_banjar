@@ -22,6 +22,19 @@ class Siswa extends CI_Controller
 		$this->load->view('data/table_siswa',$data);
 		$this->load->view('template/footer');
 	}
+
+
+	  public function tabel_siswa($id=null)
+    {
+    	$data['judul'] = "SMKN 3 Banjar - siswa";
+		$data['isi'] = $this->mc->mengambil('V_biosiswa');
+    	$data['page'] = 'admin/data/table_siswa';
+
+    	$this->load->view('admin/homepage', $data);
+    }
+
+
+
 	public function tambah()
 	{
 		{
@@ -48,4 +61,4 @@ class Siswa extends CI_Controller
                     $this->load->view('template/footer');
 		}
 	}
-}
+}}
