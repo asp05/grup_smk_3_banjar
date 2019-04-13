@@ -8,29 +8,7 @@ class M_crud extends CI_Model {
     var $column_search = array('nis','nama','jk'); //set column field database for datatable searchable just firstname , lastname , address are searchable
     var $order = array('nis' => 'desc'); // default order 
  
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->database();
-    }
-
-
-	// List all your items
-	public function mengambil($table, $where = null)
-	{
-		if ($where != null) {
-			$this->db->where($where);
-		}
-		$this->db->get($table);
-
-		// return array(
-		// 	'num_rows' => $query->num_rows(),
-		// 	'data' => $query,
-		// );
-	}
-
-
-	    private function _get_datatables_query()
+    private function _get_datatables_query()
     {
          
         $this->db->from($this->table);
@@ -90,71 +68,7 @@ class M_crud extends CI_Model {
         $this->db->from($this->table);
         return $this->db->count_all_results();
     }
- 
-    public function get_by_id($id)
-    {
-        $this->db->from($this->table);
-        $this->db->where('nis',$id);
-        $query = $this->db->get();
- 
-        return $query->row();
-    }
 
-
-	// Add a new item
-	public function menambah($table, $data)
-	{
-		if ($this->db->insert($table, $data)) {
-			return array(
-				'status' => 200,
-				'nilai' => $this->db->insert_id()
-			);
-		} else {
-			return array(
-				'status' => 404
-			);
-		}
-	}
-
-	//Update one item
-	public function mengubah($table, $where, $data)
-	{
-		$this->db->where($where);
-		if ($this->db->update($table, $data)) {
-			return array(
-				'status' => 200
-			);
-		} else {
-			return array(
-				'status' => 404
-			);
-		}
-	}
-
-	//Delete one item
-	public function menghapus($table, $where)
-	{
-		$this->db->where($where);
-		if ($this->db->delete($table)) {
-			return array(
-				'status' => 200
-			);
-		} else {
-			return array(
-				'status' => 404
-			);
-		}
-	}
-
-	//admin katanya
-	 function tampilkan($table)
-	{
-	 	return  $this->db->get($table)->result();
-        if($query->num_rows()>0)
-    {
-             return $query->num_rows();
-         }
-	 }
 }
 
 /* End of file m_crud.php */

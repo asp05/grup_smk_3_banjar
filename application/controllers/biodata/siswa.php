@@ -14,25 +14,11 @@ class Siswa extends CI_Controller
 	public function index()
 	{
 		
-		$judul['judul']	= "Admin";
-		$data['pengguna'] = $this->m_crud->tampilkan('v_biosiswa');
-		$this->load->view('template/header',$judul);
-		$this->load->view('template/sidebar');
-		$this->load->view('template/navigasi');
-		$this->load->view('data/table_siswa',$data);
-		$this->load->view('template/footer');
-	}
-
-
-	  public function tabel_siswa($id=null)
-    {
-    	$data['judul'] = "SMKN 3 Banjar - siswa";
-		$data['isi'] = $this->mc->mengambil('v_biosiswa');
+		$data['judul'] = "SMKN 3 Banjar - siswa";
     	$data['page'] = 'admin/data/table_siswa';
 
     	$this->load->view('admin/homepage', $data);
-    }
-
+	}
 
 
 
