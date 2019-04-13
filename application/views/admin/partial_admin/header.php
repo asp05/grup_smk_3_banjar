@@ -70,4 +70,4 @@
 <!-- switch alert -->
 
 <!-- gambar smkn 3 banjar -->
-<link rel="shortcut icon" href="<?php echo base_url('assets/images/logoig1.png')?>" />
+<link rel="shortcut icon" href="<?php echo base_url('assets/images/logosmk/logo.ico')?>" />
