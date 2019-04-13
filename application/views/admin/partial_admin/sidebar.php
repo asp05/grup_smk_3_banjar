@@ -45,8 +45,11 @@
 
         <li><a><i class="fa fa-gear"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url(); ?>setting/kategori">Kategori</a></li>
+            <li><a href="<?php echo base_url('setting/profile/index'); ?>">Profile</a></li>
           </ul>
+          <!-- <ul class="nav child_menu">
+            <li><a href="<?php echo base_url(); ?>setting/kategori">Kategori</a></li>
+          </ul> -->
         </li>
       </ul>
     </div>

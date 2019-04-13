@@ -80,58 +80,44 @@
 <body style="background: radial-gradient(purple,black);">
   <div class="right_col" role="main">
     <div class="row">
-      <div class="col-md-4 tengah" style="background: radial-gradient(gray,black);">
-       
-        <div class="x_panel" style="background: radial-gradient(purple,black);">
+              <div class="col-md-4 tengah">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Form login<small>different form elements</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <br />
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-          <div class="x_title">
-              <h1><font face="times new roman" color="white" >Form login<font></h1>              
-              <div class="clearfix"></div>
-          </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button">Cancel</button>
+              <button class="btn btn-primary" type="reset">Reset</button>
+                          <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
 
-          <div class="x_content">
-            <br />
-            <br />
-            <form class="form-horizontal input_mask" action="<?php echo site_url('login/proses');?>" method="post" >
-
-                <div class="row">
-                  <div class="col-md-12 col-md-offset-2 form-group has-feedback">
-                    <input type="text" class="form-control has-feedback-left" name="username_admin" id="inputSuccess2" placeholder="Username">
-                    <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                    </form>
                   </div>
                 </div>
-
-                <div class="row">
-                  <div class="col-md-12 form-group has-feedback">
-                    <input type="password" class="form-control has-feedback-left" name="password" id="inputSuccess4" placeholder="Password">
-                    <span class="fa fa-key form-control-feedback left" aria-hidden="true"></span>
-                  </div>
-                </div>
-
-              <br />
-
-                <div class="ln_solid"></div>
-                <div class="form-group">
-                  <div class="">
-                    <button type="submit" class="btn btn-success btn-block" style="background-color: blue;">Login</button>
-                  </div>
-                </div>
-                <?php
-                  if ($this->session->flashdata('errormsg')){
-                ?>
-                          
-                    <div class="alert alert-danger" role="alert">
-                      <?php echo $this->session->flashdata('errormsg'); ?>
-                    </div>
-
-                <?php } ?>
-
-            </form>
-          </div>
-                  <p class="footer-text text-center text-white">Copyright © Your Website 2019</p>
-
-       </div>
-    </div>         
+              </div>
+            </div>
   </div>
 
   <!-- container-scroller -->
