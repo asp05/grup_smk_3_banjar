@@ -9,21 +9,22 @@ class Siswa extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('m_crud');
+		$this->load->helper('url', 'form');
 	}
 	public function index()
 	{
 		
 		$data['judul'] = "SMKN 3 Banjar - siswa";
     	$data['page'] = 'admin/data/table_siswa';
-
     	$this->load->view('admin/homepage', $data);
 	}
 
 
 
-    public function ajax_list()
+        public function ajax_list()
     {
+        $this->load->helper('url');
+ 
         $list = $this->mc->get_datatables();
         $data = array();
         $no = $_POST['start'];
@@ -34,12 +35,15 @@ class Siswa extends CI_Controller
             $row[] = $siswa->nama;
             $row[] = $siswa->jk;
             $row[] = $siswa->kelas;
-            $row[] = $siswa->photo_siswa;
+            if($siswa->photo_siswa)
+                $row[] = '<a href="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" target="_blank"><img src="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" class="img-responsive" /></a>';
+            else
+                $row[] = '(No photo)';
  
             //add html for action
-            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_siswa('."'".$siswa->id."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_siswa('."'".$siswa->id."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
- 
+            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_siswa('."'".$siswa->nis."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_siswa('."'".$siswa->nis."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+         
             $data[] = $row;
         }
  
@@ -52,7 +56,6 @@ class Siswa extends CI_Controller
         //output to json format
         echo json_encode($output);
     }
-
 
 
 	public function tambah()
