@@ -80,12 +80,12 @@
 <body style="background: radial-gradient(purple,black);">
   <div class="right_col" role="main">
     <div class="row">
-      <div class="col-md-4 tengah" style="background: radial-gradient(gray,black);">
+      <div class="col-md-4 tengah" style="background: radial-gradient(gray,black); border-radius: 10px; text-align: center;">
        
-        <div class="x_panel" style="background: radial-gradient(purple,black);">
+        <div class="x_panel" style="background: radial-gradient(purple,black); border-radius: 10px;">
 
           <div class="x_title">
-              <h1><font face="times new roman" color="white" >Form login<font></h1>              
+              <h1><font face="times new roman" color="white">Form login<font></h1>              
               <div class="clearfix"></div>
           </div>
 
