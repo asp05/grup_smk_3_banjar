@@ -6,7 +6,7 @@ class M_crud extends CI_Model {
 	var $table = 'v_biosiswa';
     var $column_order = array('nis','nama','jk','kelas','photo_siswa',null); //set column field database for datatable orderable
     var $column_search = array('nis','nama','jk'); //set column field database for datatable searchable just firstname , lastname , address are searchable
-    var $order = array('nis' => 'desc'); // default order 
+    var $order = array('nis' => 'asc'); // default order 
  
     public function __construct()
     {
@@ -15,22 +15,7 @@ class M_crud extends CI_Model {
     }
 
 
-	// List all your items
-	public function mengambil($table, $where = null)
-	{
-		if ($where != null) {
-			$this->db->where($where);
-		}
-		$this->db->get($table);
-
-		// return array(
-		// 	'num_rows' => $query->num_rows(),
-		// 	'data' => $query,
-		// );
-	}
-
-
-	    private function _get_datatables_query()
+    private function _get_datatables_query()
     {
          
         $this->db->from($this->table);
@@ -99,6 +84,21 @@ class M_crud extends CI_Model {
  
         return $query->row();
     }
+
+
+	// List all your items
+	public function mengambil($table, $where = null)
+	{
+		if ($where != null) {
+			$this->db->where($where);
+		}
+		$this->db->get($table);
+
+		// return array(
+		// 	'num_rows' => $query->num_rows(),
+		// 	'data' => $query,
+		// );
+	}
 
 
 	// Add a new item

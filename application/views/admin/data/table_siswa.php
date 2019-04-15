@@ -25,11 +25,13 @@
                       </li>
                       <li><a href="<?php echo base_url('home/tabel_siswa/tambah') ?>"><i class="fa fa-plus"></i></a>
                       </li>
+                       <li><a href="reload_table()" onclick="reload_table()"><i class="fa fa-refresh"></i></a>
+                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content"> 
-                    <table id="datatable" class="table table-striped table-hover">
+                    <table id="table" class="table table-striped table-hover">
                       <thead>
                         <tr>
                           <th><center>Nis</center></th>
@@ -47,16 +49,18 @@
                     </table>
                   </div>
 
-                  <script src="<?php echo base_url('assets/jquery/jquery-3.3.1.min.js')?>"></script>
-                  <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
-                  <script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
-                  <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.js')?>"></script>
-                  <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
-
-                  <script type="text/javascript">
- 
+                    <script src="<?php echo base_url('assets/jquery/jquery-3.1.0.min.js')?>"></script>
+                    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
+                    <script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
+                    <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.min.js')?>"></script>
+                    <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>
+                     
+                     
+                    <script type="text/javascript">
+                     
                     var save_method; //for save method string
                     var table;
+                    var base_url = '<?php echo base_url();?>';
                      
                     $(document).ready(function() {
                      
@@ -75,10 +79,14 @@
                      
                             //Set column definition initialisation properties.
                             "columnDefs": [
-                            { 
-                                "targets": [ -1 ], //last column
-                                "orderable": false, //set not orderable
-                            },
+                                { 
+                                    "targets": [ -1 ], //last column
+                                    "orderable": false, //set not orderable
+                                },
+                                { 
+                                    "targets": [ -2 ], //2 last column (photo)
+                                    "orderable": false, //set not orderable
+                                },
                             ],
                      
                         });
@@ -93,9 +101,28 @@
                             todayHighlight: true,  
                         });
                      
+                        //set input/textarea/select event when change value, remove class error and remove text help block 
+                        $("input").change(function(){
+                            $(this).parent().parent().removeClass('has-error');
+                            $(this).next().empty();
+                        });
+                        $("textarea").change(function(){
+                            $(this).parent().parent().removeClass('has-error');
+                            $(this).next().empty();
+                        });
+                        $("select").change(function(){
+                            $(this).parent().parent().removeClass('has-error');
+                            $(this).next().empty();
+                        });
+                     
                     });
 
-                  </script>
+                    function reload_table()
+                      {
+                          table.ajax.reload(null,false); //reload datatable ajax 
+                      }
+
+                    </script>
 
                 </div>
               </div>
