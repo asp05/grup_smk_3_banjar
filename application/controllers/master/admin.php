@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /**
  * 
  */
-class Siswa extends CI_Controller
+class Admin extends CI_Controller
 {
 	function __construct()
 	{
@@ -14,8 +14,8 @@ class Siswa extends CI_Controller
 	public function index()
 	{
 		
-		$data['judul'] = "SMKN 3 Banjar - siswa";
-    	$data['page'] = 'admin/data/table_siswa';
+		$data['judul'] = "SMKN 3 Banjar - admin";
+    	$data['page'] = 'admin/data/table_admin';
     	$this->load->view('admin/homepage', $data);
 	}
 
@@ -25,32 +25,25 @@ class Siswa extends CI_Controller
     {
         $this->load->helper('url');
  
-        $list = $this->mc->get_datatables();
+        $list = $this->mca->get_datatables();
         $data = array();
         $no = $_POST['start'];
         foreach ($list as $siswa) {
             $no++;
             $row = array();
-            $row[] = $siswa->nis;
-            $row[] = $siswa->nama;
-            $row[] = $siswa->jk;
-            $row[] = $siswa->kelas;
-            if($siswa->photo_siswa)
-                $row[] = '<a href="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" target="_blank"><img src="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" class="img-responsive" /></a>';
-            else
-                $row[] = '(No photo)';
- 
+            $row[] = $siswa->id_admin;
+            $row[] = $siswa->username_admin;
+            $row[] = $siswa->email;
             //add html for action
-            $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_siswa('."'".$siswa->nis."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                  <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_siswa('."'".$siswa->nis."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+            $row[] = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Hapus" onclick="delete_siswa('."'".$siswa->id_admin."'".')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
          
             $data[] = $row;
         }
  
         $output = array(
                         "draw" => $_POST['draw'],
-                        "recordsTotal" => $this->mc->count_all(),
-                        "recordsFiltered" => $this->mc->count_filtered(),
+                        "recordsTotal" => $this->mca->count_all(),
+                        "recordsFiltered" => $this->mca->count_filtered(),
                         "data" => $data,
                 );
         //output to json format
@@ -86,9 +79,9 @@ class Siswa extends CI_Controller
 	   }
     }
 
-     public function ajax_edit($id)
+        public function ajax_delete($id)
     {
-        $data = $this->mc->get_by_id($id);
-        echo json_encode($data);
+        $this->mca->delete_by_id($id);
+        echo json_encode(array("status" => TRUE));
     }
 }

@@ -39,7 +39,7 @@
 
         <li><a><i class="fa fa-user"></i> Master <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url(); ?>Home/tabel_admin">Admin</a></li>
+            <li><a href="<?php echo base_url(); ?>master/admin/index">Admin</a></li>
           </ul>
         </li>
 

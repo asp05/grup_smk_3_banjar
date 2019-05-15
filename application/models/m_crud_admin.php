@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_crud extends CI_Model {
+class M_crud_admin extends CI_Model {
 
-	var $table = 'v_biosiswa';
-    var $column_order = array('nis','nama','jk','kelas','photo_siswa',null); //set column field database for datatable orderable
-    var $column_search = array('nis','nama','jk'); //set column field database for datatable searchable just firstname , lastname , address are searchable
-    var $order = array('nis' => 'asc'); // default order 
+	var $table = 'tbl_admin';
+    var $column_order = array('id_admin','username_admin','email',null); //set column field database for datatable orderable
+    var $column_search = array('id_admin','username_admin','email'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+    var $order = array('id_admin' => 'asc'); // default order 
  
     public function __construct()
     {
@@ -14,8 +14,7 @@ class M_crud extends CI_Model {
         $this->load->database();
     }
 
-
-    private function _get_datatables_query()
+     private function _get_datatables_query()
     {
          
         $this->db->from($this->table);
@@ -79,90 +78,19 @@ class M_crud extends CI_Model {
     public function get_by_id($id)
     {
         $this->db->from($this->table);
-        $this->db->where('nis',$id);
+        $this->db->where('id',$id);
         $query = $this->db->get();
  
         return $query->row();
     }
-
-
-	// List all your items
-	public function mengambil($table, $where = null)
-	{
-		if ($where != null) {
-			$this->db->where($where);
-		}
-		$this->db->get($table);
-
-		// return array(
-		// 	'num_rows' => $query->num_rows(),
-		// 	'data' => $query,
-		// );
-	}
-
-
-	// Add a new item
-	public function menambah($table, $data)
-	{
-		if ($this->db->insert($table, $data)) {
-			return array(
-				'status' => 200,
-				'nilai' => $this->db->insert_id()
-			);
-		} else {
-			return array(
-				'status' => 404
-			);
-		}
-	}
-
-	//Update one item
-	public function mengubah($table, $where, $data)
-	{
-		$this->db->where($where);
-		if ($this->db->update($table, $data)) {
-			return array(
-				'status' => 200
-			);
-		} else {
-			return array(
-				'status' => 404
-			);
-		}
-	}
-
-	//Delete one item
-	public function menghapus($table, $where)
-	{
-		$this->db->where($where);
-		if ($this->db->delete($table)) {
-			return array(
-				'status' => 200
-			);
-		} else {
-			return array(
-				'status' => 404
-			);
-		}
-	}
-
-	//admin katanya
-	 function tampilkan($table)
-	{
-	 	return  $this->db->get($table)->result();
-        if($query->num_rows()>0)
+        public function delete_by_id($id)
     {
-             return $query->num_rows();
-         }
-	 }
-
-
-       public function update($where, $data)
-    {
-        $this->db->update($this->table, $data, $where);
-        return $this->db->affected_rows();
+        $this->db->where('id', $id);
+        $this->db->delete($this->table);
     }
+	
+
 }
 
-/* End of file m_crud.php */
-/* Location: ./application/models/m_crud.php */
+/* End of file m_crud_admin.php */
+/* Location: ./application/models/m_crud_admin.php */

@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('m_crud'=>'mc');
+$autoload['model'] = array('m_crud'=>'mc','m_crud_admin'=>'mca');

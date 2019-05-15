@@ -74,7 +74,7 @@
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="shortcut icon" href="<?php echo base_url('assets/favicon.png')?>" />
+  <link rel="shortcut icon" href="<?php echo base_url('assets/images/logosmk/logo.ico')?>" />
 </head>
 
 <body style="background: radial-gradient(purple,black);">

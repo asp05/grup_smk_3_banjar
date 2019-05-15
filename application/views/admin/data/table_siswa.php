@@ -49,7 +49,7 @@
                     </table>
                   </div>
 
-                    <script src="<?php echo base_url('assets/jquery/jquery-3.1.0.min.js')?>"></script>
+                    <script src="<?php echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script>
                     <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
                     <script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
                     <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.min.js')?>"></script>
@@ -117,12 +117,96 @@
                      
                     });
 
+
+
+// Untuk Edit
+function edit_siswa(id)
+{
+    save_method = 'update';
+    $('#form')[0].reset(); // reset form on modals
+    $('.form-group').removeClass('has-error'); // clear error class
+    $('.help-block').empty(); // clear error string
+ 
+    //Ajax Load data from ajax
+    $.ajax({
+        url : "<?php echo site_url('biodata/siswa/ajax_edit/')?>/" + id,
+        type: "GET",
+        dataType: "JSON",
+        success: function(data)
+        {
+ 
+            $('[name="nama"]').val(data.nama);
+            $('[name="jk"]').val(data.jk);
+            $('[name="kelas"]').val(data.kelas);
+            $('[name="photo_siswa"]').val(data.photo_siswa);
+            $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
+            $('.modal-title').text('Edit siswa'); // Set title to Bootstrap modal title
+ 
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert('Error get data from ajax');
+        }
+    });
+}
+
                     function reload_table()
                       {
                           table.ajax.reload(null,false); //reload datatable ajax 
                       }
 
+
+
                     </script>
+                    <!-- Bootstrap modal -->
+                  <div class="modal fade" id="modal_form" role="dialog" > 
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                  <h3 class="modal-title"> Form siswa</h3>
+                              </div>
+                              <div class="modal-body form">
+                                  <form action="#" id="form" class="form-horizontal">
+                                      <input type="hidden" value="" name="nama"/> 
+                                      <div class="form-body">
+                                          <div class="form-group">
+                                              <label class="control-label col-md-3">Nama Siswa</label>
+                                              <div class="col-md-9">
+                                                  <input name="firstName" placeholder="First Name" class="form-control" type="text">
+                                                  <span class="help-block"></span>
+                                              </div>
+                                          </div>
+                                          
+                                          <div class="form-group">
+                                              <label class="control-label col-md-3">jenis kelamin</label>
+                                              <div class="col-md-9">
+                                                  <select name="jk" class="form-control">
+                                                      <option value="">--Select Gender--</option>
+                                                      <option value="male">Male</option>
+                                                      <option value="female">Female</option>
+                                                  </select>
+                                                  <span class="help-block"></span>
+                                              </div>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="control-label col-md-3">Address</label>
+                                              <div class="col-md-9">
+                                                  <textarea name="address" placeholder="Address" class="form-control"></textarea>
+                                                  <span class="help-block"></span>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                              </div>
+                          </div><!-- /.modal-content -->
+                      </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+                  <!-- End Bootstrap modal -->
 
                 </div>
               </div>
