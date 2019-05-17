@@ -85,7 +85,7 @@ class M_crud_admin extends CI_Model {
     }
         public function delete_by_id($id)
     {
-        $this->db->where('id', $id);
+        $this->db->where('id_admin', $id);
         $this->db->delete($this->table);
     }
 	
