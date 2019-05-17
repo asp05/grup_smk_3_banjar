@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Mei 2019 pada 05.16
+-- Generation Time: 17 Mei 2019 pada 05.22
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -21,29 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pkl_project`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_admin`
---
-
-CREATE TABLE `tbl_admin` (
-  `id_admin` int(255) NOT NULL,
-  `username_admin` varchar(255) NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password_admin` varchar(255) NOT NULL,
-  `images` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tbl_admin`
---
-
-INSERT INTO `tbl_admin` (`id_admin`, `username_admin`, `email`, `password_admin`, `images`) VALUES
-(1, 'Super Admin', 'admin.smk3@admin.com', 'admin', ''),
-(2, 'ariaryansyah', 'ari.smk3@gmail.com', 'smk', ''),
-(3, 'admin', 'admin@admin.com', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -102,58 +79,15 @@ INSERT INTO `tbl_detail_biosiswa` (`nis`, `nama`, `jk`, `tempat_ttl`, `ttl`, `id
 ('11718349', 'Ulfiah', 'perempuan', 'Banjar', '0000-00-00', '1', '30.jpg', 'default_qr.jpg', 'Cilacap', '1', '1'),
 ('11718351', 'Yoga Pangestu P', 'laki-laki', 'Banjar', '0000-00-00', '1', '31.jpg', 'default_qr.jpg', 'Cilacap', '1', '1');
 
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `v_biosiswa`
--- (Lihat di bawah untuk tampilan aktual)
---
-CREATE TABLE `v_biosiswa` (
-`nis` varchar(50)
-,`nama` varchar(200)
-,`jk` enum('laki-laki','perempuan')
-,`tempat_ttl` text
-,`ttl` date
-,`kelas` enum('X RPL 1','XI RPL 1','XII RPL 1','')
-,`photo_siswa` text
-,`qr_siswa` varchar(200)
-,`alamat` text
-);
-
--- --------------------------------------------------------
-
---
--- Struktur untuk view `v_biosiswa`
---
-DROP TABLE IF EXISTS `v_biosiswa`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_biosiswa`  AS  select `tbl_detail_biosiswa`.`nis` AS `nis`,`tbl_detail_biosiswa`.`nama` AS `nama`,`tbl_detail_biosiswa`.`jk` AS `jk`,`tbl_detail_biosiswa`.`tempat_ttl` AS `tempat_ttl`,`tbl_detail_biosiswa`.`ttl` AS `ttl`,`tbl_kelas`.`kelas` AS `kelas`,`tbl_detail_biosiswa`.`photo_siswa` AS `photo_siswa`,`tbl_detail_biosiswa`.`qr_siswa` AS `qr_siswa`,`tbl_detail_biosiswa`.`alamat` AS `alamat` from (`tbl_detail_biosiswa` join `tbl_kelas` on((`tbl_detail_biosiswa`.`id_kelas` = `tbl_kelas`.`id_kelas`))) ;
-
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `tbl_detail_biosiswa`
 --
 ALTER TABLE `tbl_detail_biosiswa`
   ADD PRIMARY KEY (`nis`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  MODIFY `id_admin` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
