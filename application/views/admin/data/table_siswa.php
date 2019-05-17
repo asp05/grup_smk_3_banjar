@@ -36,9 +36,13 @@
                         <tr>
                           <th><center>Nis</center></th>
                           <th><center>Nama</center></th>
-                          <th><center>Jenis Kelamin</center></th>
+                          <th><center>L/P</center></th>
+                          <th><center>Tempat Lahir</center></th>
+                          <th><center>Tanggal Lahir</center></th>
                           <th><center>Kelas</center></th>
                           <th><center>Foto Siswa</center></th>
+                          <th><center>QR Code</center></th>
+                          <th><center>Alamat</center></th>
                           <th><center>Aksi</center></th>
                         </tr>
                       </thead>
@@ -49,8 +53,8 @@
                     </table>
                   </div>
 
-                    <script src="<?php echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script>
-                    <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
+                    <!-- <script src="<?php //echo base_url('assets/jquery/jquery-2.1.4.min.js')?>"></script> -->
+                    <!-- <script src="<?php //echo base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script> -->
                     <script src="<?php echo base_url('assets/datatables/js/jquery.dataTables.min.js')?>"></script>
                     <script src="<?php echo base_url('assets/datatables/js/dataTables.bootstrap.min.js')?>"></script>
                     <script src="<?php echo base_url('assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js')?>"></script>

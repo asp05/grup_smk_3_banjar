@@ -34,11 +34,18 @@ class Siswa extends CI_Controller
             $row[] = $siswa->nis;
             $row[] = $siswa->nama;
             $row[] = $siswa->jk;
+            $row[] = $siswa->tempat_ttl;
+            $row[] = date_indo($siswa->ttl);
             $row[] = $siswa->kelas;
             if($siswa->photo_siswa)
-                $row[] = '<a href="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" target="_blank"><img src="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" class="img-responsive" /></a>';
+                $row[] = '<a href="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" target="_blank"><img src="'.base_url('assets/images/siswa/'.$siswa->photo_siswa).'" class="img-responsive"  width="100px" height="100px" /></a>';
             else
                 $row[] = '(No photo)';
+            if($siswa->qr_siswa)
+                $row[] = '<a href="'.base_url('assets/images/siswa/'.$siswa->qr_siswa).'" target="_blank"><img src="'.base_url('assets/images/siswa/'.$siswa->qr_siswa).'" class="img-responsive" width="100px" height="100px" /></a>';
+            else
+                $row[] = '(No photo)';
+            $row[] = $siswa->alamat;
  
             //add html for action
             $row[] = '<a class="btn btn-sm btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_siswa('."'".$siswa->nis."'".')"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
