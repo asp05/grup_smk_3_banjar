@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Mei 2019 pada 05.23
+-- Generation Time: 25 Mei 2019 pada 04.26
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -38,7 +38,8 @@ CREATE TABLE `tbl_tgl` (
 --
 
 INSERT INTO `tbl_tgl` (`id_tgl`, `tgl`) VALUES
-(1, '2019-05-17');
+(1, '2019-05-17'),
+(2, '2019-05-18');
 
 --
 -- Indexes for dumped tables
@@ -58,7 +59,7 @@ ALTER TABLE `tbl_tgl`
 -- AUTO_INCREMENT for table `tbl_tgl`
 --
 ALTER TABLE `tbl_tgl`
-  MODIFY `id_tgl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_tgl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17 Mei 2019 pada 05.22
+-- Generation Time: 25 Mei 2019 pada 04.24
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -32,18 +32,17 @@ CREATE TABLE `tbl_admin` (
   `id_admin` int(255) NOT NULL,
   `username_admin` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `password_admin` varchar(255) NOT NULL,
-  `images` text NOT NULL
+  `password_admin` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tbl_admin`
 --
 
-INSERT INTO `tbl_admin` (`id_admin`, `username_admin`, `email`, `password_admin`, `images`) VALUES
-(1, 'Super Admin', 'admin.smk3@admin.com', 'admin', ''),
-(2, 'ariaryansyah', 'ari.smk3@gmail.com', 'smk', ''),
-(3, 'admin', 'admin@admin.com', 'admin', '');
+INSERT INTO `tbl_admin` (`id_admin`, `username_admin`, `email`, `password_admin`) VALUES
+(1, 'Super Admin', 'admin.smk3@admin.com', 'admin'),
+(2, 'ariaryansyah', 'ari.smk3@gmail.com', 'smk'),
+(3, 'admin', 'admin@admin.com', 'admin');
 
 --
 -- Indexes for dumped tables

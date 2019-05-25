@@ -30,10 +30,18 @@
             <li><a href="<?php echo base_url(); ?>home/index">Dashboard</a></li>
           </ul>
         </li>
+
         <li><a><i class="fa fa-table"></i> Biodata <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url(); ?>biodata/Siswa/index">Biodata Siswa</a></li>
-            <li><a href="<?php echo base_url(); ?>master/barang/index">Biodata Guru</a></li>
+            <li><a href="<?php echo base_url('biodata/Siswa/index'); ?>">Biodata Siswa</a></li>
+            <!-- <li><a href="<?php //echo base_url(); ?>">Biodata Guru</a></li> -->
+          </ul>
+        </li>
+
+        <li><a><i class="fa fa-table"></i> Absensi <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="<?php echo base_url('absensi/Tgl_absen_siswa/index'); ?>">Absen Siswa</a></li>
+            <!-- <li><a href="<?php echo base_url(); ?>master/barang/index">Biodata Guru</a></li> -->
           </ul>
         </li>
 

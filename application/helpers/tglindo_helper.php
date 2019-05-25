@@ -15,6 +15,20 @@ if (!function_exists('tgl_indo')) {
 	}
 }
 
+if (!function_exists('tgl_indo_num')) {
+	function date_indo1($tgl)
+	{
+		$ubah = gmdate($tgl, time()+60*60*8);
+		$pecah = explode("-", $ubah);
+		
+		$tanggal = $pecah[2];
+		$bulan = $pecah[1];
+		$tahun = $pecah[0];
+
+		return $tanggal.'-'.$bulan.'-'.$tahun;
+	}
+}
+
 if (!function_exists('bulan')) {
 	function bulan($bln)
 	{
