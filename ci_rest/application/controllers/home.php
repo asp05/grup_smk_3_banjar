@@ -6,9 +6,9 @@ class Home extends CI_Controller
     public function index($id_absis = null)
     {
         if ($id_absis != null) {
-            $q = $this->md_crud->mengambil(array('id_absis' => $id_absis));
+            $q = $this->Md_crud->mengambil(array('id_absis' => $id_absis));
         } else {
-            $q = $this->md_crud->mengambil();
+            $q = $this->Md_crud->mengambil();
         }
 
         if ($q['num_rows'] == true) {
@@ -29,7 +29,7 @@ class Home extends CI_Controller
         $datanya = json_decode($rawData, true);
 
         if (@count($datanya) > 0) {
-            $cek = $this->md_crud->mengambil(array('id_absis' => $datanya['id_absis']));
+            $cek = $this->Md_crud->mengambil(array('id_absis' => $datanya['id_absis']));
             if ($cek['num_rows'] == true) {
                 $status = 404;
                 $pesan  = 'Data Tidak Ditemukan.';
@@ -44,7 +44,7 @@ class Home extends CI_Controller
                     'status_kehadiran' => $datanya['status_kehadiran'],
 
                 );
-                $hasil  = $this->md_crud->menambah($data);
+                $hasil  = $this->Md_crud->menambah($data);
                 $status = $hasil['status'];
                 if ($status == 200) {
                     $awal = 'Berhasil';
@@ -71,7 +71,7 @@ class Home extends CI_Controller
         $datanya = json_decode($rawData, true);
 
         if (@count($datanya) > 0) {
-            $cek = $this->md_crud->mengambil(array('id_absis' => $id_absis));
+            $cek = $this->Md_crud->mengambil(array('id_absis' => $id_absis));
             if ($cek['num_rows'] == false) {
                 $status = 404;
                 $pesan  = 'Data Tidak Ditemukan.';
@@ -86,7 +86,7 @@ class Home extends CI_Controller
                     'tgl'              => $datanya['tgl'],
                     'status_kehadiran' => $datanya['status_kehadiran'],
                 );
-                $hasil  = $this->md_crud->mengubah(array('id_absis' => $id_absis), $data);
+                $hasil  = $this->Md_crud->mengubah(array('id_absis' => $id_absis), $data);
                 $status = $hasil['status'];
                 if ($status == 200) {
                     $awal = 'Berhasil';
@@ -109,12 +109,12 @@ class Home extends CI_Controller
 
     // public function hapus($id = null)
     // {
-    //     $cek = $this->md_crud->mengambil('users', array('id' => $id));
+    //     $cek = $this->Md_crud->mengambil('users', array('id' => $id));
     //     if ($cek['num_rows'] == false) {
     //         $status = 404;
     //         $pesan  = 'Contact Tidak Ditemukan.';
     //     } else {
-    //         $hasil  = $this->md_crud->menghapus('users', array('id' => $id));
+    //         $hasil  = $this->Md_crud->menghapus('users', array('id' => $id));
     //         $status = $hasil['status'];
     //         if ($status == 200) {
     //             $awal = 'Berhasil';
@@ -147,7 +147,7 @@ class Home extends CI_Controller
     //     if (@count($datanya) > 0) {
     //         $data['username'] = $datanya['username'];
     //         $data['password'] = $datanya['password'];
-    //         $cek = $this->md_crud->mengambil('users', $data);
+    //         $cek = $this->Md_crud->mengambil('users', $data);
     //         if($cek['num_rows'] == true) {
     //             $status = 200;
     //             $pesan  = 'Berhasil login.';

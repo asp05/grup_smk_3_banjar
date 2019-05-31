@@ -5,7 +5,7 @@
         <div class=" col-md-2 col-sm-12 col-xs-12 form-group pull-right top_search">
           <div class="input-group">
             <!-- <a href="javascript:void(0)" onclick="reload_table()" title="Print To Pdf" class="btn btn-danger"><i class="fa fa-download"></i> Report Pdf</a> -->
-            <a href="<?= site_url('laporan/excel') ?>" title="Print To Excel" class="btn btn-success"><i class="fa fa-download"></i> Report Excel</a>
+            <a href="<?= site_url('Laporan/Excel') ?>" title="Print To Excel" class="btn btn-success"><i class="fa fa-download"></i> Report Excel</a>
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@ $(document).ready(function() {
 
         // Load data for the table's content from an Ajax source
         "ajax": {
-            "url": "<?php echo site_url('absensi/Tgl_absen_siswa/ajax_list') ?>",
+            "url": "<?php echo site_url('Absensi/Tgl_absen_siswa/Ajax_list') ?>",
             "type": "POST"
         },
 
@@ -219,7 +219,7 @@ function edit_siswa(id_absis)
 
     //Ajax Load data from ajax
     $.ajax({
-        url : "<?php echo site_url('absensi/Tgl_absen_siswa/ajax_edit/') ?>" + id_absis,
+        url : "<?php echo site_url('Absensi/Tgl_absen_siswa/Ajax_edit/') ?>" + id_absis,
         type: "GET",
         dataType: "JSON",
         success: function(data)
@@ -250,9 +250,9 @@ function save()
     var url;
  
     if(save_method == 'add') {
-        url = "<?php echo site_url('absensi/Tgl_absen_siswa/ajax_add')?>";
+        url = "<?php echo site_url('Absensi/Tgl_absen_siswa/Ajax_add')?>";
     } else {
-        url = "<?php echo site_url('absensi/Tgl_absen_siswa/ajax_update')?>";
+        url = "<?php echo site_url('Absensi/Tgl_absen_siswa/Ajax_update')?>";
     }
  
     // ajax adding data to database

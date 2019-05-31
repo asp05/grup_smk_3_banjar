@@ -50,11 +50,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |        my-controller/my-method    -> my_controller/my_method
  */
 $route['default_controller']         = 'index/indexs';
-$route['api/users']['get']           = 'home/index';
-$route['api/users/(:num)']['get']    = 'home/index/$1';
-$route['api/users']['post']          = 'home/tambah';
-$route['api/users/(:num)']['put']    = 'home/ubah/$1';
-$route['api/users/(:num)']['delete'] = 'home/hapus/$1';
-$route['api/users/login']['post']    = 'home/login';
-$route['404_override']               = 'home/error';
+$route['api/users']['get']           = 'Home/Index';
+$route['api/users/(:num)']['get']    = 'Home/Index/$1';
+$route['api/users']['post']          = 'Home/Tambah';
+$route['api/users/(:num)']['put']    = 'Home/UbaH/$1';
+$route['api/users/(:num)']['delete'] = 'Home/Hapus/$1';
+$route['api/users/login']['post']    = 'Home/Login';
+$route['404_override']               = 'Home/Error';
 $route['translate_uri_dashes']       = false;

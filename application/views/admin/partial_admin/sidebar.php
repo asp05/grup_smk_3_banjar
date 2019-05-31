@@ -27,19 +27,19 @@
       <ul class="nav side-menu">
         <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url(); ?>home/index">Dashboard</a></li>
+            <li><a href="<?php echo base_url(); ?>Home/Index">Dashboard</a></li>
           </ul>
         </li>
 
         <li><a><i class="fa fa-table"></i> Biodata <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url('biodata/Siswa/index'); ?>">Biodata Siswa</a></li>
+            <li><a href="<?php echo base_url('Biodata/Siswa/Index'); ?>">Biodata Siswa</a></li>
           </ul>
         </li>
 
         <li><a><i class="fa fa-users"></i> Absensi <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url('absensi/Tgl_absen_siswa/index'); ?>">Absen Siswa</a></li>
+            <li><a href="<?php echo base_url('Absensi/Tgl_absen_siswa/Index'); ?>">Absen Siswa</a></li>
             <!-- <li><a href="<?php echo base_url(); ?>master/barang/index">Biodata Guru</a></li> -->
           </ul>
         </li>
@@ -49,14 +49,14 @@
       <ul class="nav side-menu">
         <li><a><i class="fa fa-user"></i> Master <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url(); ?>master/admin/index">Admin</a></li>
+            <li><a href="<?php echo base_url(); ?>Master/Admin/Index">Admin</a></li>
           </ul>
         </li>
 
         <li><a><i class="fa fa-gear"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="<?php echo base_url('setting/profile/index'); ?>">Profile</a></li>
-            <li><a href="<?php echo base_url('setting/profile/'); ?>">Info Sekolah</a></li>
+            <li><a href="<?php echo base_url('Setting/Profile/Index'); ?>">Profile</a></li>
+            <li><a href="<?php echo base_url('Setting/Profile/'); ?>">Info Sekolah</a></li>
           </ul>
           <!-- <ul class="nav child_menu">
             <li><a href="<?php echo base_url(); ?>setting/kategori">Kategori</a></li>

@@ -32,7 +32,7 @@
     <script src="<?php echo base_url(); ?>assets/custom/dist/belajar_swal.js"></script>
 
     <!--<script src="<?php echo base_url();?>assets/custom/js/barang.js"></script>-->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       var table;
  
       $(document).ready(function() {
@@ -60,6 +60,6 @@
           });
        
       });
-    </script>
+    </script> -->
   </body>
 </html>

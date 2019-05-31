@@ -70,7 +70,7 @@ $(document).ready(function() {
  
         // Load data for the table's content from an Ajax source
         "ajax": {
-            "url": "<?php echo site_url('master/admin/ajax_list')?>",
+            "url": "<?php echo site_url('Master/Admin/Ajax_list')?>",
             "type": "POST"
         },
  
@@ -123,7 +123,7 @@ function edit_siswa(id)
  
     //Ajax Load data from ajax
     $.ajax({
-        url : "<?php echo site_url('biodata/siswa/ajax_edit/')?>/" + email,
+        url : "<?php echo site_url('Biodata/Siswa/Ajax_edit/')?>/" + email,
         type: "GET",
         dataType: "JSON",
         success: function(data)
@@ -149,7 +149,7 @@ function delete_siswa(email)
     {
         // ajax delete data to database
         $.ajax({
-            url : "<?php echo site_url('master/admin/ajax_delete')?>/"+email,
+            url : "<?php echo site_url('Master/Admin/Ajax_delete')?>/"+email,
             type: "POST",
             dataType: "JSON",
             success: function(data)

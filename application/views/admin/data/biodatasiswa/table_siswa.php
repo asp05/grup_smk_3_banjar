@@ -13,7 +13,7 @@
                     <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('home/tabel_siswa/tambah') ?>"><i class="fa fa-plus"></i></a>
+                    <a href="<?php echo base_url('Home/Tabel_siswa/Tambah') ?>"><i class="fa fa-plus"></i></a>
                 </li>
                  <li>
                     <a href="javascript:void(0)" onclick="reload_table()"><i class="fa fa-refresh"></i></a>
@@ -127,7 +127,7 @@ $(document).ready(function() {
 
         // Load data for the table's content from an Ajax source
         "ajax": {
-            "url": "<?php echo site_url('biodata/Siswa/ajax_list') ?>",
+            "url": "<?php echo site_url('Biodata/Siswa/Ajax_list') ?>",
             "type": "POST"
         },
 
@@ -181,7 +181,7 @@ function edit_siswa(id)
 
     //Ajax Load data from ajax
     $.ajax({
-        url : "<?php echo site_url('biodata/siswa/ajax_edit/') ?>/" + id,
+        url : "<?php echo site_url('Biodata/Siswa/Ajax_edit/') ?>/" + id,
         type: "GET",
         dataType: "JSON",
         success: function(data)

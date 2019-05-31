@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |    $autoload['libraries'] = array('user_agent' => 'ua');
  */
-$autoload['libraries'] = array('database', 'session', 'form_validation', 'upload', 'lb_crud' => 'lc');
+$autoload['libraries'] = array('database', 'session', 'form_validation', 'upload', 'Lb_crud' => 'lc');
 
 /*
 | -------------------------------------------------------------------
@@ -133,8 +133,8 @@ $autoload['language'] = array();
 |    $autoload['model'] = array('first_model' => 'first');
  */
 $autoload['model'] = array(
-    'm_crud'       => 'mc',
-    'm_crud_admin' => 'mca',
-    'm_crud_absen' => 'mcab',
-    'laporan_absen' => 'la'
+    'M_crud'       => 'mc',
+    'M_crud_admin' => 'mca',
+    'M_crud_absen' => 'mcab',
+    'Laporan_absen' => 'la'
 );
