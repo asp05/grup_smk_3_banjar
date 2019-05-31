@@ -60,6 +60,7 @@ class Tgl_absen_siswa extends CI_Controller
     public function ajax_update()
     {
         $data = array(
+            'tgl' => $this->input->post('tgl'),
             'status_kehadiran' => $this->input->post('status_kehadiran')
         );
         $this->mcab->update(array('id_absis' => $this->input->post('id_absis')), $data);

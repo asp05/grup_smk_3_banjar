@@ -81,11 +81,12 @@ class Home extends CI_Controller
                     'nis'              => $datanya['nis'],
                     'nama'             => $datanya['nama'],
                     'jk'               => $datanya['jk'],
+                    'id_kelas'            => $datanya['id_kelas'],
                     'kelas'            => $datanya['kelas'],
                     'tgl'              => $datanya['tgl'],
                     'status_kehadiran' => $datanya['status_kehadiran'],
                 );
-                $hasil  = $this->md_crud->update(array('id_absis' => $id_absis), $data);
+                $hasil  = $this->md_crud->mengubah(array('id_absis' => $id_absis), $data);
                 $status = $hasil['status'];
                 if ($status == 200) {
                     $awal = 'Berhasil';

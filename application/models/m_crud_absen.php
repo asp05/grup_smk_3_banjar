@@ -12,9 +12,8 @@ class M_crud_absen extends CI_Model
     private function _get_datatables_query()
     {
         $this->db->from('tbl_absis');
-        $this->db->select('tbl_absis.*, tbl_absis.id_absis as id_absis, tbl_absis.status_kehadiran as status_kehadiran, tbl_kelas.kelas as kelas, tbl_tgl.tgl as tgl, tbl_detail_biosiswa.nama as nama, tbl_detail_biosiswa.jk as jk');
+        $this->db->select('tbl_absis.*, tbl_absis.id_absis as id_absis, tbl_absis.status_kehadiran as status_kehadiran, tbl_kelas.kelas as kelas, tbl_detail_biosiswa.nama as nama, tbl_detail_biosiswa.jk as jk');
         $this->db->join('tbl_kelas', 'tbl_kelas.id_kelas = tbl_absis.id_kelas', 'left');
-        $this->db->join('tbl_tgl', 'tbl_tgl.id_tgl = tbl_absis.id_tgl', 'left');
         $this->db->join('tbl_detail_biosiswa', 'tbl_detail_biosiswa.nis = tbl_absis.nis', 'left');
         
 
@@ -71,9 +70,8 @@ class M_crud_absen extends CI_Model
     public function count_all()
     {
         $this->db->from('tbl_absis');
-        $this->db->select('tbl_absis.*, tbl_kelas.kelas, tbl_tgl.tgl, tbl_detail_biosiswa.nama, tbl_detail_biosiswa.jk');
+        $this->db->select('tbl_absis.*, tbl_kelas.kelas, tbl_detail_biosiswa.nama, tbl_detail_biosiswa.jk');
         $this->db->join('tbl_kelas', 'tbl_kelas.id_kelas = tbl_absis.id_kelas', 'left');
-        $this->db->join('tbl_tgl', 'tbl_tgl.id_tgl = tbl_absis.id_tgl', 'left');
         $this->db->join('tbl_detail_biosiswa', 'tbl_detail_biosiswa.nis = tbl_absis.nis', 'left');
         return $this->db->count_all_results();
     }
@@ -81,9 +79,8 @@ class M_crud_absen extends CI_Model
     public function get_by_id($id_absis)
     {
         $this->db->from('tbl_absis');
-        $this->db->select('tbl_absis.*, tbl_kelas.kelas, tbl_tgl.tgl, tbl_detail_biosiswa.nama, tbl_detail_biosiswa.jk, tbl_detail_biosiswa.photo_siswa, tbl_detail_biosiswa.qr_siswa');
+        $this->db->select('tbl_absis.*, tbl_kelas.kelas, tbl_detail_biosiswa.nama, tbl_detail_biosiswa.jk, tbl_detail_biosiswa.photo_siswa, tbl_detail_biosiswa.qr_siswa');
         $this->db->join('tbl_kelas', 'tbl_kelas.id_kelas = tbl_absis.id_kelas', 'left');
-        $this->db->join('tbl_tgl', 'tbl_tgl.id_tgl = tbl_absis.id_tgl', 'left');
         $this->db->join('tbl_detail_biosiswa', 'tbl_detail_biosiswa.nis = tbl_absis.nis', 'left');
         $this->db->where('id_absis', $id_absis);
         $query = $this->db->get();

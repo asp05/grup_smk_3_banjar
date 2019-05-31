@@ -14,6 +14,7 @@ class Profile extends CI_Controller {
 	{
 		$data['judul'] = "SMKN 3 Banjar - Profile Admin";
 		$data['page'] = 'admin/setting/profile';
+		// $data['isi'] = $this->mca->get_by_id($email);
 		$this->load->view('admin/homepage', $data);
 	}
 

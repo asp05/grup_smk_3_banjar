@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Mei 2019 pada 04.26
+-- Generation Time: 31 Mei 2019 pada 03.30
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -25,41 +25,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_tgl`
+-- Struktur untuk view `v_report_absen`
 --
 
-CREATE TABLE `tbl_tgl` (
-  `id_tgl` int(11) NOT NULL,
-  `tgl` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_report_absen`  AS  select `tbl_absis`.`nis` AS `nis`,`tbl_detail_biosiswa`.`nama` AS `nama`,`tbl_detail_biosiswa`.`jk` AS `jk`,`tbl_kelas`.`kelas` AS `kelas`,`tbl_absis`.`status_kehadiran` AS `status_kehadiran`,`tbl_absis`.`tgl` AS `tgl` from ((`tbl_absis` join `tbl_detail_biosiswa` on((`tbl_absis`.`nis` = `tbl_detail_biosiswa`.`nis`))) join `tbl_kelas` on((`tbl_absis`.`id_kelas` = `tbl_kelas`.`id_kelas`))) ;
 
 --
--- Dumping data untuk tabel `tbl_tgl`
+-- VIEW  `v_report_absen`
+-- Data: Tidak ada
 --
 
-INSERT INTO `tbl_tgl` (`id_tgl`, `tgl`) VALUES
-(1, '2019-05-17'),
-(2, '2019-05-18');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl_tgl`
---
-ALTER TABLE `tbl_tgl`
-  ADD PRIMARY KEY (`id_tgl`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_tgl`
---
-ALTER TABLE `tbl_tgl`
-  MODIFY `id_tgl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

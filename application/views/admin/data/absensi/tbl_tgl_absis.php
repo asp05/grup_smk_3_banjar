@@ -1,5 +1,15 @@
-page content -->
+<!-- page content -->
   <div class="right_col" role="main">
+    <div>
+      <div class="">
+        <div class=" col-md-2 col-sm-12 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+            <!-- <a href="javascript:void(0)" onclick="reload_table()" title="Print To Pdf" class="btn btn-danger"><i class="fa fa-download"></i> Report Pdf</a> -->
+            <a href="<?= site_url('laporan/excel') ?>" title="Print To Excel" class="btn btn-success"><i class="fa fa-download"></i> Report Excel</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <div class="clearfix"></div>
 
@@ -13,13 +23,13 @@ page content -->
                     <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
                 <li>
-                    <a href="javascript:void(0)" onclick="reload_table()"><i class="fa fa-refresh"></i></a>
+                    <a href="javascript:void(0)" onclick="reload_table()" title="Refresh"><i class="fa fa-refresh"></i></a>
                 </li>
               </ul>
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
-              <table id="table" class="table table-striped table-hover">
+              <table id="table" class="table table-striped table-hover table-responsive">
                 <thead>
                   <tr>
                     <th><center>Tanggal</center></th>
@@ -31,7 +41,9 @@ page content -->
                     <th width="130px"><center>Aksi</center></th>
                   </tr>
                 </thead>
-              </table>
+              </table><br><br>
+              <label>*NOTE</label><br>
+              <p>Jika jam kerja sudah berakhir silahkan download laporan dengan menekan icon download dipojok kanan atas untuk <b>Report</b></p>
             </div>
           </div>
       </div>
@@ -55,7 +67,7 @@ page content -->
                         <div class="form-group">
                             <label class="control-label col-md-3">Tanggal</label>
                             <div class="col-md-9">
-                                <input name="tgl" class="form-control" type="text" readonly>
+                                <input name="tgl" class="form-control" type="date" >
                                 <span class="help-block"></span>
                             </div>
                         </div>                        
@@ -118,8 +130,8 @@ page content -->
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -221,7 +233,7 @@ function edit_siswa(id_absis)
             $('[name="kelas"]').val(data.kelas);
             $('[name="status_kehadiran"]').val(data.status_kehadiran);
             $('#modal_form').modal('show');
-            $('.modal-title').text('Edit Person');
+            $('.modal-title').text('Edit Absen');
 
         },
         error: function (jqXHR, textStatus, errorThrown)

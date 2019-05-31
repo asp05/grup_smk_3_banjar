@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_crud_admin extends CI_Model {
 
 	var $table = 'tbl_admin';
-    var $column_order = array('id_admin','username_admin','email',null); //set column field database for datatable orderable
-    var $column_search = array('id_admin','username_admin','email'); //set column field database for datatable searchable just firstname , lastname , address are searchable
-    var $order = array('id_admin' => 'asc'); // default order 
+    var $column_order = array('username_admin','email',null); //set column field database for datatable orderable
+    var $column_search = array('username_admin','email'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+    var $order = array('email' => 'asc'); // default order 
  
     public function __construct()
     {
@@ -75,17 +75,17 @@ class M_crud_admin extends CI_Model {
         return $this->db->count_all_results();
     }
  
-    public function get_by_id($id)
+    public function get_by_id($email)
     {
         $this->db->from($this->table);
-        $this->db->where('id',$id);
+        $this->db->where('email',$email);
         $query = $this->db->get();
  
         return $query->row();
     }
-        public function delete_by_id($id)
+        public function delete_by_id($email)
     {
-        $this->db->where('id_admin', $id);
+        $this->db->where('email', $email);
         $this->db->delete($this->table);
     }
 	

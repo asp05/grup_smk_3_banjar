@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
-      <a href="<?php echo site_url('home'); ?>" class="site_title"><i class="fa fa-home"></i> <span>SMKN 3 Banjar</span></a>
+      <a href="<?php echo site_url('home'); ?>" class="site_title"><img src="<?php echo base_url('assets/images/logosmk/logo.ico')?>" alt="..." width="34px" height="40px"> <span> SMKN 3 Banjar</span></a>
     </div>
 
     <div class="clearfix"></div>
@@ -9,7 +9,7 @@
     <!-- menu profile quick info -->
   <div class="profile clearfix">
     <div class="profile_pic">
-      <img src="<?php echo base_url(); ?>assets/images/img.jpg" alt="..." class="img-circle profile_img">
+      <img src="<?php echo base_url('assets/images/user_admin/smk5caf2d3390cceuser.png')?>" alt="..." class="img-circle profile_img">
     </div>
     <div class="profile_info">
       <span>Selamat Datang,</span>
@@ -34,17 +34,19 @@
         <li><a><i class="fa fa-table"></i> Biodata <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="<?php echo base_url('biodata/Siswa/index'); ?>">Biodata Siswa</a></li>
-            <!-- <li><a href="<?php //echo base_url(); ?>">Biodata Guru</a></li> -->
           </ul>
         </li>
 
-        <li><a><i class="fa fa-table"></i> Absensi <span class="fa fa-chevron-down"></span></a>
+        <li><a><i class="fa fa-users"></i> Absensi <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="<?php echo base_url('absensi/Tgl_absen_siswa/index'); ?>">Absen Siswa</a></li>
             <!-- <li><a href="<?php echo base_url(); ?>master/barang/index">Biodata Guru</a></li> -->
           </ul>
         </li>
-
+        <br>
+      </ul>
+      <h3>Opsional</h3>
+      <ul class="nav side-menu">
         <li><a><i class="fa fa-user"></i> Master <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="<?php echo base_url(); ?>master/admin/index">Admin</a></li>
@@ -54,6 +56,7 @@
         <li><a><i class="fa fa-gear"></i> Pengaturan <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
             <li><a href="<?php echo base_url('setting/profile/index'); ?>">Profile</a></li>
+            <li><a href="<?php echo base_url('setting/profile/'); ?>">Info Sekolah</a></li>
           </ul>
           <!-- <ul class="nav child_menu">
             <li><a href="<?php echo base_url(); ?>setting/kategori">Kategori</a></li>

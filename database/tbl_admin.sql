@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25 Mei 2019 pada 04.25
+-- Generation Time: 31 Mei 2019 pada 03.28
 -- Versi Server: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -25,40 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kelas`
+-- Struktur dari tabel `tbl_admin`
 --
 
-CREATE TABLE `tbl_kelas` (
-  `id_kelas` int(11) NOT NULL,
-  `kelas` enum('X RPL 1','XI RPL 1','XII RPL 1','') NOT NULL
+CREATE TABLE `tbl_admin` (
+  `email` varchar(255) NOT NULL,
+  `username_admin` varchar(255) NOT NULL,
+  `password_admin` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_kelas`
+-- Dumping data untuk tabel `tbl_admin`
 --
 
-INSERT INTO `tbl_kelas` (`id_kelas`, `kelas`) VALUES
-(1, 'XI RPL 1');
+INSERT INTO `tbl_admin` (`email`, `username_admin`, `password_admin`) VALUES
+('admin.smk3@admin.com', 'Super Admin', 'admin'),
+('admin@admin.com', 'admin', 'admin'),
+('ari.smk3@gmail.com', 'ariaryansyah', 'smk');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tbl_kelas`
+-- Indexes for table `tbl_admin`
 --
-ALTER TABLE `tbl_kelas`
-  ADD PRIMARY KEY (`id_kelas`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `tbl_kelas`
---
-ALTER TABLE `tbl_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`email`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

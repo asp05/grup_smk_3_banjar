@@ -135,5 +135,6 @@ $autoload['language'] = array();
 $autoload['model'] = array(
     'm_crud'       => 'mc',
     'm_crud_admin' => 'mca',
-    'm_crud_absen' => 'mcab'
+    'm_crud_absen' => 'mcab',
+    'laporan_absen' => 'la'
 );

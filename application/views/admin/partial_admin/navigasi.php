@@ -8,23 +8,23 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="<?php echo base_url('assets/images/img.jpg') ?>" alt=""><?php echo $this->session->username_admin; ?>
+            <img src="<?php echo base_url('assets/images/user_admin/smk5caf2d3390cceuser.png')?>" alt=""><?php echo $this->session->username_admin; ?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
-            <li><a href="javascript:;"> Profile</a></li>
-            <li>
+            <li><a href="<?php echo base_url('setting/profile/index'); ?>"> Profile</a></li>
+            <!-- <li>
               <a href="javascript:;">
                 <span class="badge bg-red pull-right">50%</span>
                 <span>Settings</span>
               </a>
-            </li>
-            <li><a href="javascript:;">Help</a></li>
+            </li> -->
+            <!-- <li><a href="javascript:;">Help</a></li> -->
             <li><a href="<?php echo base_url('login/logout'); ?>" onClick="return confirm('Apakah Kamu Yakin Ingin Keluar?')"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
           </ul>
         </li>
 
-        <li role="presentation" class="dropdown">
+        <!-- <li role="presentation" class="dropdown">
           <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-envelope-o"></i>
             <span class="badge bg-green">6</span>
@@ -87,7 +87,7 @@
               </div>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </div>
