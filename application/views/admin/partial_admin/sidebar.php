@@ -13,7 +13,7 @@
     </div>
     <div class="profile_info">
       <span>Selamat Datang,</span>
-      <h2><?php echo $this->session->username_admin; ?></h2>
+      <h2><?=ucfirst($this->funclogin->user_login()->username_admin)?></h2>
     </div>
   </div>
   <!-- /menu profile quick info -->

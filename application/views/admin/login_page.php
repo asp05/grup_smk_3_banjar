@@ -92,11 +92,11 @@
           <div class="x_content">
             <br />
             <br />
-            <form class="form-horizontal input_mask" action="<?php echo site_url('login/proses');?>" method="post" >
+            <form class="form-horizontal input_mask" action="<?=site_url('login/proses');?>" method="post" >
 
                 <div class="row">
                   <div class="col-md-12 col-md-offset-2 form-group has-feedback">
-                    <input type="text" class="form-control has-feedback-left" name="username_admin" id="inputSuccess2" placeholder="Username">
+                    <input type="text" class="form-control has-feedback-left" name="username" id="inputSuccess2" placeholder="Username">
                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -113,7 +113,7 @@
                 <div class="ln_solid"></div>
                 <div class="form-group">
                   <div class="">
-                    <button type="submit" class="btn btn-success btn-block" style="background-color: blue;">Login</button>
+                    <button type="submit" name="btnlogin" class="btn btn-success btn-block" style="background-color: blue;">Login</button>
                   </div>
                 </div>
                 <?php

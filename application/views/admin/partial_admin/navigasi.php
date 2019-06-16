@@ -8,7 +8,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="<?php echo base_url('assets/images/user_admin/smk5caf2d3390cceuser.png')?>" alt=""><?php echo $this->session->username_admin; ?>
+            <img src="<?php echo base_url('assets/images/user_admin/smk5caf2d3390cceuser.png')?>" alt=""><?=ucfirst($this->funclogin->user_login()->username_admin)?>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">
