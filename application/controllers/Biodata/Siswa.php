@@ -39,7 +39,7 @@ class Siswa extends CI_Controller
             }
 
             if ($siswa->qr_siswa) {
-                $row[] = '<a href="' . base_url('assets/images/siswa/' . $siswa->qr_siswa) . '" target="_blank"><img src="' . base_url('assets/images/siswa/' . $siswa->qr_siswa) . '" class="img-responsive" width="100px" height="100px" /></a>';
+                $row[] = '<a href="' . base_url('assets/images/siswa/' . $siswa->qr_siswa) . '" target="_blank"><img src="' . base_url('assets/images/qrcode/' . $siswa->qr_siswa) . '" class="img-responsive" width="100px" height="100px" /></a>';
             } else {
                 $row[] = '(No photo)';
             }
