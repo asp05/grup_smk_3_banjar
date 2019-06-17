@@ -6,10 +6,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
  */
 class Siswa extends CI_Controller
 {
-    // function __construct()
-    // {
-    //     parent::__construct();
-    // }
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('m_crud');
+    }
 
     public function index()
     {
@@ -17,7 +18,6 @@ class Siswa extends CI_Controller
         $data['page']  = 'admin/data/biodatasiswa/table_siswa';
         $this->load->view('admin/homepage', $data);
     }
-
     public function ajax_list()
     {
         $list = $this->mc->get_datatables();
@@ -65,30 +65,35 @@ class Siswa extends CI_Controller
 
     public function tambah()
     {
-        {
-            $this->form_validation->set_rules('nama', 'Nama Kategori', 'required');
-            if ($this->input->post('nama') != null) {
-                $pos = array(
-                    'nama' => $this->input->post('nama'),
-                );
-                if ($this->form_validation->run() == false) {
-                    $this->load->view('tambah');
-                } else {
-                    $this->model_kategori->simpan('tbl_kategori', $pos);
-                    $this->session->set_flashdata('berhasil', 'berhasil');
-                }
-            } else {
-                $data = array(
-                    'judul'  => "Master Tambah Barang",
-                    'master' => "Tambah Barang",
-                );
-                $this->load->view('template/header', $data);
-                $this->load->view('template/sidebar');
-                $this->load->view('template/navigasi');
-                $this->load->view('tambahkategori');
-                $this->load->view('template/footer');
-            }
+        $this->_validasi();
+        if ($this->form_validation->run() == false) {
+            $data['judul'] = "SMKN 3 Banjar - siswa";
+            $data['kelas'] = $this->m_crud->getsiswa('tbl_kelas');
+            $data['page']  = 'admin/data/biodatasiswa/tambah_siswa';
+            $this->load->view('admin/homepage', $data);
+        }else{
+            $data = array(
+                'nis'           => $this->input->post('nis'),
+                'nama'          => $this->input->post('nama'),
+                'jk'            => $this->input->post('jk'),
+                'tempat_ttl'    => $this->input->post('tempat_ttl'),
+                'ttl'           => $this->input->post('ttl'),
+                'id_kelas'      => $this->input->post('id_kelas'),
+                'photo_siswa'   => 30,
+                'qr_siswa'      => 'default_qr.jpg',
+                'alamat'        => $this->input->post('alamat')
+            );
+            $this->m_crud->insert('tbl_detail_biosiswa',$data);
+            $this->session->set_flashdata('sukses', 'Data Berhasil Di tambahkan');
+            redirect('home');
         }
+
+    }
+    private function _validasi(){
+        $this->form_validation->set_rules('nis', 'nis', 'trim|required|is_unique[tbl_detail_biosiswa.nis]');
+        $this->form_validation->set_rules('nama', 'nama', 'trim|required');
+        $this->form_validation->set_rules('tempat_ttl', 'tempat_ttl', 'trim|required');
+        $this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
     }
 
     public function ajax_edit($id)

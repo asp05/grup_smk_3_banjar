@@ -153,6 +153,17 @@ class M_crud extends CI_Model
         $this->db->update($this->table, $data, $where);
         return $this->db->affected_rows();
     }
+    public function getsiswa($table){
+        return $this->db->get($table)->result();
+
+    }
+    public function insert($table,$data){
+        if ($this->db->insert($table,$data)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 /* End of file m_crud.php */

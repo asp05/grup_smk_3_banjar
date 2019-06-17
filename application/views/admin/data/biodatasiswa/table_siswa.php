@@ -1,6 +1,17 @@
 <!-- page content -->
 <div class="right_col" role="main">
 
+    <div>
+      <div class="">
+        <div class=" col-md-2 col-sm-12 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+            <!-- <a href="javascript:void(0)" onclick="reload_table()" title="Print To Pdf" class="btn btn-danger"><i class="fa fa-download"></i> Report Pdf</a> -->
+            <a href="<?= site_url('Laporan/Excel/siswa') ?>" title="Download Excel" class="btn btn-success"><i class="fa fa-download"></i> Report Excel</a>
+          </div>
+        </div>
+      </div>
+    </div>      
+
       <div class="clearfix"></div>
 
       <div class="row">
@@ -13,7 +24,7 @@
                     <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('Home/Tabel_siswa/Tambah') ?>"><i class="fa fa-plus"></i></a>
+                    <a href="<?php echo base_url('Biodata/Siswa/tambah') ?>"><i class="fa fa-plus"></i></a>
                 </li>
                  <li>
                     <a href="javascript:void(0)" onclick="reload_table()"><i class="fa fa-refresh"></i></a>
