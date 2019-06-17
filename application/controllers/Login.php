@@ -24,12 +24,12 @@ class Login extends CI_Controller {
         $this->session->set_userdata($params);
         echo "<script>
           alert('Selamat, login berhasil..');
-          window.location='".site_url('home')."';
+          window.location='".site_url('Home')."';
         </script>";
       } else {
         echo "<script>
           alert('Login gagal, username/password Salah !');
-          window.location='".site_url('login')."';
+          window.location='".site_url('Login')."';
         </script>";
       }
 
@@ -40,7 +40,7 @@ class Login extends CI_Controller {
   {
     $params = array('emailadmin');
     $this->session->unset_userdata($params);
-    redirect('login');
+    redirect('Login');
   }	
 }
 
